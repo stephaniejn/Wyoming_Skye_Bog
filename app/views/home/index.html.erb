@@ -17,7 +17,7 @@
         <% tag_max = @tags.map{|t| t.creatures.length}.sort.last %>
           <% @tags.each do |tag| %>
           <% fontsize = (tag.creatures.length.to_f / tag_max) * 19 %>
-          <%= button_to tag.name, tag_path(tag.name), method: :get, :class => "tagcloud btn", :style => "font-size: #{fontsize.to_i+3}px" %>
+          <%= button_to tag.name, creaturetag_path(tag.name), method: :get, :class => "tagcloud btn", :style => "font-size: #{fontsize.to_i+3}px" %>
           <% end %>
         </div>
 

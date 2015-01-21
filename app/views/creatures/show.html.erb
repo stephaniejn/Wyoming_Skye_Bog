@@ -14,7 +14,7 @@
           <% @creature.tags.each do |tag, index| %>
 
           <%= " " unless index = 0 %>
-          <%=button_to tag.name, tag_path(tag.name), method: :get, :class => "btn btn-xs" %>
+          <%=button_to tag.name, creaturetag_path(tag.name), method: :get, :class => "btn btn-xs" %>
           <%end%>
         </div>
         <br/><br/><h2>Image Results: &nbsp; <small class="header-change"><%= @search %></small></h2>

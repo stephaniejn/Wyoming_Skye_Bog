@@ -1,0 +1,25 @@
+
+<div class="row">
+<%= render 'shared/flash' %>
+  <div class="col-md-8">
+<div class="main">
+<div class="table-responsive">
+ <h1>Bog Creatures From the Isle of Skye</h1><br/>
+    <table class="table">
+
+        <tr>
+          <th><h3>Name:</h3></th>
+        </tr>
+        <tr>
+          <% @tags.each do |tag| %>
+           <td><%= link_to tag.name, tag_path(tag.name)%></td>
+            <td><%= link_to 'Delete', tag, method: :delete, :data => {:confirm  => "Are you sure you want to delete?"},:class => "btn btn-xs" %></td>
+        </tr>
+        <% end %>
+
+    </table>
+    </div>
+    </div>
+  </div> <!-- close div row-->
+  </div>
+

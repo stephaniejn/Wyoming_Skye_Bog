@@ -19,10 +19,13 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :creatures
 
-    get "creatures/tag/:tag"  => "creatures#tag", as: :tag
+    get "creatures/tag/:tag"  => "creatures#tag", as: :creaturetag
 
     get "tags/new" => "tags#new"
     post "tags" => "tags#create"
+    get "tags/index" => "tags#index"
+    resources :tags, only: [:index, :destroy]
+
     # resources :tags
     # get "newtag" => "tags#new"
 
