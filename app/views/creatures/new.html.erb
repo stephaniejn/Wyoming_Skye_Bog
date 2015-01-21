@@ -1,0 +1,28 @@
+
+
+
+<div class="row">
+ <%= render 'shared/flash' %>
+  <div class ="col-md-5 col-md-offset-1">
+    <div class="main">
+
+      <h1 class="tk-penna-swashes">Add a creature to our database</h1>
+      <div class="form-group">
+
+       <%= bootstrap_form_for @creature, html: {class: "form"} do |f| %>
+
+       <%= f.text_field :name, :placeholder => "Creature Name", :class => "form-control"%>
+       <%= f.text_area :desc, :placeholder => "Creature Description", :class => "form-control text_area" %>
+       <div class="checkTags">
+       <%= f.text_field :tag_ids, :placeholder => "Add Tags", :value => @creature.tags.map{|t| t.name}.join(","), 'data-role'=>'tagsinput' %>
+       </div>
+       <%= f.submit :class => "btn"%>
+
+       <% end %>
+
+
+     </div>
+   </div><!-- close columns -->
+ </div><!-- close form group -->
+
+</div><!-- close row -->
